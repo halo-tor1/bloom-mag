@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bloombreed Schools Magazine</title>
+  </head>
+  <body class="is-locked">
+    <div class="entrance" id="entrance">
+      <img class="entrance__photo" id="entrance-photo" alt="" />
+      <div class="entrance__veil"></div>
+      <div class="entrance__content">
+        <div class="entrance__logo-wrap">
+          <img class="entrance__logo" src="https://bloombreedschools.org/wp-content/uploads/2022/03/logored-6.png" alt="Bloombreed Schools logo" />
+        </div>
+        <h1 class="entrance__title" id="entrance-title">Bloombreed Schools</h1>
+        <p class="entrance__tagline">The School Magazine</p>
+        <button id="enter-button" class="btn btn--light" type="button">Enter the magazine</button>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="#top">
+        <img class="brand__logo" src="https://bloombreedschools.org/wp-content/uploads/2022/03/logored-6.png" alt="" />
+        <span class="brand__name">Bloombreed Schools <small>Magazine</small></span>
+      </a>
+      <nav>
+        <a href="#stories">Stories</a>
+        <a href="#crew">Crew</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div id="hero-media"></div>
+        <div class="hero__text">
+          <p class="eyebrow" id="hero-issue"></p>
+          <h1 id="hero-title"></h1>
+          <p id="hero-excerpt"></p>
+          <button id="hero-button" class="btn" type="button">Read the story</button>
+        </div>
+      </section>
+
+      <section class="section" id="stories">
+        <div class="section__head">
+          <h2>Latest Stories</h2>
+          <div class="filters" id="filters" role="group" aria-label="Filter stories by category"></div>
+        </div>
+        <div class="grid" id="grid"></div>
+      </section>
+
+      <section class="section" id="crew">
+        <div class="section__head">
+          <div>
+            <h2>Meet the Crew</h2>
+            <p class="section__intro">The teams behind every issue.</p>
+          </div>
+        </div>
+        <div class="team-tabs" id="team-tabs" role="tablist" aria-label="Teams"></div>
+        <div class="team-panel" id="team-panel" role="tabpanel">
+          <div class="team-panel__intro">
+            <p class="eyebrow" id="team-count"></p>
+            <h3 id="team-name"></h3>
+            <p id="team-summary"></p>
+          </div>
+          <div class="grid flip-grid" id="crew-grid"></div>
+          <p class="section__intro flip-note">Click any card to see more about each member.</p>
+        </div>
+      </section>
+
+      <section class="section" id="gallery">
+        <div class="section__head">
+          <h2>Gallery</h2>
+          <p class="section__intro">Pictures from our events.</p>
+        </div>
+        <div class="grid" id="gallery-grid"></div>
+      </section>
+
+      <section class="section" id="event-view" hidden>
+        <a class="back-link" href="#gallery">&larr; Back to gallery</a>
+        <div class="section__head">
+          <div>
+            <h2 id="event-title"></h2>
+            <p class="section__intro" id="event-count"></p>
+          </div>
+        </div>
+        <div class="photo-grid" id="event-photos"></div>
+      </section>
+
+      <section class="about" id="about">
+        <div class="about__inner">
+          <p class="eyebrow eyebrow--light">About the magazine</p>
+          <h2>Written by our students, for our school community</h2>
+          <p>
+            The Bloombreed Schools Magazine is where students share news, stories, sport,
+            art, and opinions. Every issue is planned, written, and designed by students
+            with help from our teachers.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Bloombreed Schools. All rights reserved.</p>
+    </footer>
+
+    <dialog class="article-dialog" id="article-dialog">
+      <button class="dialog-close" id="dialog-close" type="button" aria-label="Close article">&times;</button>
+      <div class="article-dialog__inner" id="article-content"></div>
+    </dialog>
+
+    <dialog class="lightbox" id="lightbox">
+      <button class="dialog-close" id="lightbox-close" type="button" aria-label="Close photo">&times;</button>
+      <div id="lightbox-media"></div>
+      <div class="lightbox__nav">
+        <button class="nav-button" id="lightbox-prev" type="button" aria-label="Previous photo">&larr;</button>
+        <span class="lightbox__count" id="lightbox-count"></span>
+        <button class="nav-button" id="lightbox-next" type="button" aria-label="Next photo">&rarr;</button>
+      </div>
+    </dialog>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
