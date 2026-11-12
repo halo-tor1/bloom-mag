@@ -220,6 +220,16 @@ export const galleryEvents = [
       'images/gallery-3-4.jpg',
     ],
   },
+  {
+    id: 'scholarship-exam',
+    title: 'Scholarship Exam',
+    photos: [
+      'images/scholarship-exam-1.jpg',
+      'images/scholarship-exam-2.jpg',
+      'images/scholarship-exam-3.jpg',
+      'images/scholarship-exam-4.jpg',
+    ],
+  },
 ]
 
 export const entrancePhoto = 'images/entrance.jpg'
