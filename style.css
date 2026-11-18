@@ -402,6 +402,66 @@ p {
   color: #fff;
 }
 
+.gallery-slideshow {
+  position: relative;
+  margin-bottom: 40px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--navy-900);
+  box-shadow: 0 16px 36px rgba(20, 40, 80, 0.14);
+}
+
+.gallery-slideshow__slide {
+  position: relative;
+  display: block;
+  min-height: 360px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.gallery-slideshow__media {
+  min-height: 360px;
+  border-radius: 0;
+  background: var(--navy-900);
+}
+
+.gallery-slideshow__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(20, 40, 80, 0.82), transparent 70%);
+}
+
+.gallery-slideshow__caption {
+  position: absolute;
+  inset: auto auto 32px 32px;
+  z-index: 1;
+}
+
+.gallery-slideshow__caption .eyebrow {
+  margin-bottom: 8px;
+  color: var(--gold-300);
+}
+
+.gallery-slideshow__caption h3 {
+  margin: 0;
+  font-size: clamp(28px, 5vw, 48px);
+}
+
+.gallery-slideshow__controls {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2;
+  display: flex;
+  gap: 8px;
+}
+
+.gallery-slideshow__controls .nav-button {
+  width: 40px;
+  height: 40px;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));

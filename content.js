@@ -199,6 +199,10 @@ export const galleryEvents = [
       "images/founder's day/Copy_of_1789112832858.jpg",
       "images/founder's day/Copy_of_1789112475698.jpg",
       "images/founder's day/Copy_of_1789112475551.jpg",
+      "images/founder's day/Copy_of_1789111097553.jpg",
+      "images/founder's day/Copy_of_1789111643378.jpg",
+      "images/founder's day/Copy_of_1789112364283.jpg",
+      "images/founder's day/Copy_of_1789111985015.jpg",
     ],
   },
   {

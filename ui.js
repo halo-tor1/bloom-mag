@@ -15,12 +15,15 @@ export function formatDate(isoDate) {
 
 export function createMedia(src, alt, className) {
   const media = el('div', `media ${className}`)
-  media.append(el('span', 'media__label', 'Photo coming soon'))
+  const label = el('span', 'media__label', 'Loading photo')
   const img = document.createElement('img')
-  img.src = src
   img.alt = alt
   img.loading = 'lazy'
-  img.addEventListener('error', () => img.remove())
-  media.append(img)
+  img.addEventListener('load', () => label.remove())
+  img.addEventListener('error', () => {
+    label.textContent = 'Unable to load photo'
+  })
+  img.src = src
+  media.append(label, img)
   return media
 }

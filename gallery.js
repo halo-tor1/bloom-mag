@@ -8,6 +8,7 @@ export function setupGallery() {
   const eventTitle = document.querySelector('#event-title')
   const eventCount = document.querySelector('#event-count')
   const eventPhotos = document.querySelector('#event-photos')
+  const slideshow = document.querySelector('#gallery-slideshow')
 
   const lightbox = document.querySelector('#lightbox')
   const lightboxMedia = document.querySelector('#lightbox-media')
@@ -52,6 +53,39 @@ export function setupGallery() {
     eventTitle.textContent = event.title
     eventCount.textContent = `${event.photos.length} photos`
     renderEventPhotos(event)
+  }
+
+  function renderSlideshow() {
+    const slides = galleryEvents.map((event, index) => {
+      const slide = el('a', 'gallery-slideshow__slide')
+      slide.href = `#gallery/${event.id}`
+      slide.append(createMedia(event.photos[0], `${event.title} featured photo`, 'gallery-slideshow__media'))
+
+      const caption = el('div', 'gallery-slideshow__caption')
+      caption.append(el('p', 'eyebrow', `Event ${index + 1}`), el('h3', '', event.title))
+      slide.append(caption)
+      return slide
+    })
+
+    let activeIndex = 0
+    const showSlide = (index) => {
+      activeIndex = (index + slides.length) % slides.length
+      slides.forEach((slide, slideIndex) => slide.toggleAttribute('hidden', slideIndex !== activeIndex))
+    }
+
+    const controls = el('div', 'gallery-slideshow__controls')
+    const previous = el('button', 'nav-button', '←')
+    const next = el('button', 'nav-button', '→')
+    previous.type = 'button'
+    next.type = 'button'
+    previous.setAttribute('aria-label', 'Previous featured event')
+    next.setAttribute('aria-label', 'Next featured event')
+    previous.addEventListener('click', () => showSlide(activeIndex - 1))
+    next.addEventListener('click', () => showSlide(activeIndex + 1))
+    controls.append(previous, next)
+    slideshow.replaceChildren(...slides, controls)
+    showSlide(0)
+    window.setInterval(() => showSlide(activeIndex + 1), 5000)
   }
 
   function renderGalleryList() {
@@ -102,6 +136,7 @@ export function setupGallery() {
   })
 
   window.addEventListener('hashchange', showRoute)
+  renderSlideshow()
   renderGalleryList()
   showRoute()
 }
