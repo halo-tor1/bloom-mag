@@ -191,43 +191,14 @@ export const articles = [
 
 export const galleryEvents = [
   {
-    id: 'event-1',
-    title: 'TBD',
+    id: 'founders-day',
+    title: "Founder's Day",
     photos: [
-      'images/gallery-1-1.jpg',
-      'images/gallery-1-2.jpg',
-      'images/gallery-1-3.jpg',
-      'images/gallery-1-4.jpg',
-    ],
-  },
-  {
-    id: 'event-2',
-    title: 'TBD',
-    photos: [
-      'images/gallery-2-1.jpg',
-      'images/gallery-2-2.jpg',
-      'images/gallery-2-3.jpg',
-      'images/gallery-2-4.jpg',
-    ],
-  },
-  {
-    id: 'event-3',
-    title: 'TBD',
-    photos: [
-      'images/gallery-3-1.jpg',
-      'images/gallery-3-2.jpg',
-      'images/gallery-3-3.jpg',
-      'images/gallery-3-4.jpg',
-    ],
-  },
-  {
-    id: 'scholarship-exam',
-    title: 'Scholarship Exam',
-    photos: [
-      'images/scholarship-exam-1.jpg',
-      'images/scholarship-exam-2.jpg',
-      'images/scholarship-exam-3.jpg',
-      'images/scholarship-exam-4.jpg',
+      "images/founder's day/Copy_of_1789127693365.jpg",
+      "images/founder's day/Copy_of_1789127693187.jpg",
+      "images/founder's day/Copy_of_1789112832858.jpg",
+      "images/founder's day/Copy_of_1789112475698.jpg",
+      "images/founder's day/Copy_of_1789112475551.jpg",
     ],
   },
   {
