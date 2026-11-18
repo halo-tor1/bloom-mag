@@ -230,6 +230,26 @@ export const galleryEvents = [
       'images/scholarship-exam-4.jpg',
     ],
   },
+  {
+    id: 'career-day',
+    title: 'Career Day',
+    photos: [
+      'images/career day/Copy_of_IMG_20261106_101820.jpg',
+      'images/career day/Copy_of_IMG_20261106_102909.jpg',
+      'images/career day/Copy_of_IMG_20261106_103423.jpg',
+      'images/career day/Copy_of_IMG_20261106_103819.jpg',
+      'images/career day/Copy_of_IMG_20261106_104000.jpg',
+      'images/career day/Copy_of_IMG_20261106_104610.jpg',
+      'images/career day/Copy_of_IMG_20261106_111332.jpg',
+      'images/career day/Copy_of_IMG_20261106_112819.jpg',
+      'images/career day/Copy_of_IMG_20261106_114508.jpg',
+      'images/career day/Copy_of_IMG_20261106_122807.jpg',
+      'images/career day/Copy_of_IMG_20261106_122913.jpg',
+      'images/career day/Copy_of_IMG_20261106_123436.jpg',
+      'images/career day/Copy_of_IMG_20261106_123651.jpg',
+      'images/career day/Copy_of_IMG_20261106_124625.jpg',
+    ],
+  },
 ]
 
 export const entrancePhoto = 'images/entrance.jpg'
