@@ -206,6 +206,17 @@ export const galleryEvents = [
     ],
   },
   {
+    id: 'cultural-day',
+    title: 'Cultural Day',
+    photos: [
+      'images/cultural day/Copy_of_1790785901615.jpg',
+      'images/cultural day/Copy_of_1790785901574.jpg',
+      'images/cultural day/Copy_of_1790785901426.jpg',
+      'images/cultural day/Copy_of_1790785901244.jpg',
+      'images/cultural day/Copy_of_1790785901017.jpg',
+    ],
+  },
+  {
     id: 'career-day',
     title: 'Career Day',
     photos: [

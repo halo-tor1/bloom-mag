@@ -9,6 +9,7 @@ export function setupGallery() {
   const eventCount = document.querySelector('#event-count')
   const eventPhotos = document.querySelector('#event-photos')
   const slideshow = document.querySelector('#gallery-slideshow')
+  const topSlideshow = document.querySelector('#top-slideshow')
 
   const lightbox = document.querySelector('#lightbox')
   const lightboxMedia = document.querySelector('#lightbox-media')
@@ -88,6 +89,24 @@ export function setupGallery() {
     window.setInterval(() => showSlide(activeIndex + 1), 5000)
   }
 
+  function renderTopSlideshow() {
+    const slides = galleryEvents.flatMap((event) => event.photos.map((src, index) => ({
+      src,
+      title: event.title,
+      index,
+    })))
+    let activeIndex = 0
+    const showSlide = (index) => {
+      activeIndex = (index + slides.length) % slides.length
+      topSlideshow.replaceChildren(
+        createMedia(slides[activeIndex].src, `${slides[activeIndex].title} photo`, 'top-slideshow__media'),
+        el('p', 'top-slideshow__label', `${slides[activeIndex].title} · Photo ${slides[activeIndex].index + 1}`),
+      )
+    }
+    showSlide(0)
+    window.setInterval(() => showSlide(activeIndex + 1), 4500)
+  }
+
   function renderGalleryList() {
     galleryGrid.replaceChildren(
       ...galleryEvents.map((event, index) => {
@@ -136,6 +155,7 @@ export function setupGallery() {
   })
 
   window.addEventListener('hashchange', showRoute)
+  renderTopSlideshow()
   renderSlideshow()
   renderGalleryList()
   showRoute()

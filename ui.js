@@ -21,7 +21,8 @@ export function createMedia(src, alt, className) {
   img.loading = 'lazy'
   img.addEventListener('load', () => label.remove())
   img.addEventListener('error', () => {
-    label.textContent = 'Unable to load photo'
+    img.remove()
+    label.remove()
   })
   img.src = src
   media.append(label, img)
