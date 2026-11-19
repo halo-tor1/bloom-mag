@@ -96,13 +96,25 @@ export function setupGallery() {
       index,
     })))
     let activeIndex = 0
+    const stage = el('div', 'top-slideshow__stage')
+    const controls = el('div', 'top-slideshow__controls')
+    const previous = el('button', 'nav-button', '←')
+    const next = el('button', 'nav-button', '→')
+    previous.type = 'button'
+    next.type = 'button'
+    previous.setAttribute('aria-label', 'Previous featured photo')
+    next.setAttribute('aria-label', 'Next featured photo')
     const showSlide = (index) => {
       activeIndex = (index + slides.length) % slides.length
-      topSlideshow.replaceChildren(
+      stage.replaceChildren(
         createMedia(slides[activeIndex].src, `${slides[activeIndex].title} photo`, 'top-slideshow__media'),
         el('p', 'top-slideshow__label', `${slides[activeIndex].title} · Photo ${slides[activeIndex].index + 1}`),
       )
     }
+    previous.addEventListener('click', () => showSlide(activeIndex - 1))
+    next.addEventListener('click', () => showSlide(activeIndex + 1))
+    controls.append(previous, next)
+    topSlideshow.replaceChildren(stage, controls)
     showSlide(0)
     window.setInterval(() => showSlide(activeIndex + 1), 4500)
   }
@@ -155,6 +167,10 @@ export function setupGallery() {
   })
 
   window.addEventListener('hashchange', showRoute)
+  galleryEvents.flatMap((event) => event.photos).forEach((src) => {
+    const image = new Image()
+    image.src = src
+  })
   renderTopSlideshow()
   renderSlideshow()
   renderGalleryList()

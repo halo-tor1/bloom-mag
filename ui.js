@@ -18,7 +18,8 @@ export function createMedia(src, alt, className) {
   const label = el('span', 'media__label', 'Loading photo')
   const img = document.createElement('img')
   img.alt = alt
-  img.loading = 'lazy'
+  img.loading = 'eager'
+  img.decoding = 'async'
   img.addEventListener('load', () => label.remove())
   img.addEventListener('error', () => {
     img.remove()

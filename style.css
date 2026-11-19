@@ -1,17 +1,17 @@
 :root {
-  --red-900: #6b1b1b;
-  --red-700: #a02828;
-  --red-100: #f8e6e6;
-  --navy-900: #142850;
-  --navy-100: #e8edf5;
-  --gold-500: #f0a000;
-  --gold-300: #fbd27a;
-  --gold-100: #fff4d6;
-  --cream: #fbf8f5;
+  --red-900: #0b3b75;
+  --red-700: #1769aa;
+  --red-100: #e7f1fb;
+  --navy-900: #071a33;
+  --navy-100: #dceaf7;
+  --gold-500: #2f8fd1;
+  --gold-300: #a9dcff;
+  --gold-100: #eaf7ff;
+  --cream: #f4f8fc;
   --paper: #ffffff;
-  --ink: #142850;
-  --muted: #4d5b74;
-  --line: #e4e0dc;
+  --ink: #102a4c;
+  --muted: #536b86;
+  --line: #d9e5f0;
 
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   font-weight: 400;
@@ -224,6 +224,10 @@ p {
   background: var(--navy-900);
 }
 
+.top-slideshow__stage {
+  height: 100%;
+}
+
 .top-slideshow__media {
   height: 100%;
   animation: slideshow-fade 0.8s ease;
@@ -235,7 +239,7 @@ p {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 45%, rgba(20, 40, 80, 0.78));
+  background: linear-gradient(180deg, transparent 45%, rgba(7, 26, 51, 0.78));
 }
 
 .top-slideshow__label {
@@ -244,8 +248,34 @@ p {
   bottom: 24px;
   z-index: 1;
   color: #fff;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(7, 26, 51, 0.54);
   font-weight: 700;
   letter-spacing: 0.04em;
+  backdrop-filter: blur(12px);
+}
+
+.top-slideshow__controls {
+  position: absolute;
+  bottom: 24px;
+  left: 32px;
+  z-index: 2;
+  display: flex;
+  gap: 8px;
+}
+
+.top-slideshow__controls .nav-button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(7, 26, 51, 0.54);
+  backdrop-filter: blur(12px);
+}
+
+.top-slideshow__controls .nav-button:hover {
+  background: var(--red-700);
 }
 
 .hero {
@@ -464,7 +494,7 @@ p {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(20, 40, 80, 0.82), transparent 70%);
+  background: linear-gradient(90deg, rgba(7, 26, 51, 0.82), transparent 70%);
 }
 
 .gallery-slideshow__caption {
@@ -495,6 +525,9 @@ p {
 .gallery-slideshow__controls .nav-button {
   width: 40px;
   height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(7, 26, 51, 0.68);
+  backdrop-filter: blur(12px);
 }
 
 .grid {
@@ -930,6 +963,18 @@ p {
 }
 
 @media (max-width: 800px) {
+  .top-slideshow__label {
+    right: 20px;
+    bottom: 20px;
+    max-width: calc(100% - 112px);
+    font-size: 13px;
+  }
+
+  .top-slideshow__controls {
+    left: 20px;
+    bottom: 20px;
+  }
+
   .site-header {
     padding: 16px 20px;
   }
