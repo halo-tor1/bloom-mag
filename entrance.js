@@ -34,6 +34,8 @@ function closeEntrance() {
 
 export function setupEntrance() {
   splitTitleIntoLetters()
+  photo.loading = 'eager'
+  photo.decoding = 'sync'
   photo.src = entrancePhoto
   photo.addEventListener('error', () => photo.remove())
   entrance.addEventListener('pointermove', handlePointerMove)

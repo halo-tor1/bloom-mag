@@ -19,7 +19,7 @@ export function createMedia(src, alt, className) {
   const img = document.createElement('img')
   img.alt = alt
   img.loading = 'eager'
-  img.decoding = 'async'
+  img.decoding = 'sync'
   img.addEventListener('load', () => label.remove())
   img.addEventListener('error', () => {
     img.remove()

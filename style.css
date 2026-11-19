@@ -1,17 +1,17 @@
 :root {
-  --red-900: #0b3b75;
-  --red-700: #1769aa;
-  --red-100: #e7f1fb;
-  --navy-900: #071a33;
-  --navy-100: #dceaf7;
-  --gold-500: #2f8fd1;
-  --gold-300: #a9dcff;
-  --gold-100: #eaf7ff;
-  --cream: #f4f8fc;
-  --paper: #ffffff;
-  --ink: #102a4c;
-  --muted: #536b86;
-  --line: #d9e5f0;
+  --red-900: #8f1d2c;
+  --red-700: #c9343f;
+  --red-100: #fdebed;
+  --navy-900: #062b63;
+  --navy-100: #dbeafe;
+  --gold-500: #f2b705;
+  --gold-300: #ffe082;
+  --gold-100: #fff8dc;
+  --cream: #f7f0dc;
+  --paper: #fffdf7;
+  --ink: #062b63;
+  --muted: #52627a;
+  --line: #e5d9b8;
 
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   font-weight: 400;

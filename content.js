@@ -238,4 +238,4 @@ export const galleryEvents = [
   },
 ]
 
-export const entrancePhoto = "images/founder's day/Copy_of_1789111985015.jpg"
+export const entrancePhoto = "images/founder's day/Copy_of_1789127693365.jpg"
