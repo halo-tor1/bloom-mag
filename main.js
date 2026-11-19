@@ -83,6 +83,19 @@ dialog.addEventListener('click', (event) => {
   if (event.target === dialog) dialog.close()
 })
 
+function updatePage() {
+  const route = window.location.hash.replace('#', '') || 'top'
+  const isGalleryRoute = route === 'gallery' || route.startsWith('gallery/')
+  const pageSections = [...document.querySelectorAll('.page-section')]
+  pageSections.forEach((section) => {
+    section.hidden = section.id !== route && !(isGalleryRoute && section.id === 'gallery')
+  })
+  document.querySelector('#home-hero').hidden = route !== 'top'
+  document.querySelector('#top-slideshow').hidden = route !== 'top'
+}
+
+window.addEventListener('hashchange', updatePage)
+updatePage()
 setupEntrance()
 renderHero()
 renderFilters()

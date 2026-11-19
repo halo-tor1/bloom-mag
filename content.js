@@ -1,6 +1,6 @@
 // Edit the text and photos for everything on the site here.
 // To add a photo: drop the file into the public/images folder and use the same file name below
-// (for example "images/crew-it-1.jpg"). Until a file exists, a "Photo coming soon" box is shown instead.
+// (for example "images/crew-it-1.jpg").
 
 export const issueLabel = 'Autumn Issue 2026'
 
@@ -238,4 +238,4 @@ export const galleryEvents = [
   },
 ]
 
-export const entrancePhoto = 'images/entrance.jpg'
+export const entrancePhoto = "images/founder's day/Copy_of_1789111985015.jpg"

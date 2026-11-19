@@ -57,16 +57,16 @@ export function setupGallery() {
   }
 
   function renderSlideshow() {
-    const slides = galleryEvents.map((event, index) => {
+    const slides = galleryEvents.flatMap((event, eventIndex) => event.photos.slice(0, 3).map((src, photoIndex) => {
       const slide = el('a', 'gallery-slideshow__slide')
       slide.href = `#gallery/${event.id}`
-      slide.append(createMedia(event.photos[0], `${event.title} featured photo`, 'gallery-slideshow__media'))
+      slide.append(createMedia(src, `${event.title} featured photo ${photoIndex + 1}`, 'gallery-slideshow__media'))
 
       const caption = el('div', 'gallery-slideshow__caption')
-      caption.append(el('p', 'eyebrow', `Event ${index + 1}`), el('h3', '', event.title))
+      caption.append(el('p', 'eyebrow', `Event ${eventIndex + 1} · Highlight ${photoIndex + 1}`), el('h3', '', event.title))
       slide.append(caption)
       return slide
-    })
+    }))
 
     let activeIndex = 0
     const showSlide = (index) => {
@@ -138,7 +138,7 @@ export function setupGallery() {
     }
 
     eventView.hidden = true
-    gallerySection.hidden = false
+    gallerySection.hidden = window.location.hash !== '#gallery'
     if (window.location.hash === '#gallery') gallerySection.scrollIntoView({ block: 'start' })
   }
 
