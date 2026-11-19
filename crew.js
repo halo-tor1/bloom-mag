@@ -19,12 +19,14 @@ export function setupCrew() {
     const inner = el('div', 'flip-card__inner')
 
     const front = el('div', 'flip-card__face flip-card__front')
+    const plus = el('span', 'flip-card__plus', '+')
+    plus.setAttribute('aria-hidden', 'true')
     const details = el('div', 'flip-card__details')
     details.append(
       el('h3', 'flip-card__name', member.name),
       el('p', 'flip-card__role', member.role),
     )
-    front.append(createMedia(member.image, member.name, 'media--portrait'), details)
+    front.append(plus, createMedia(member.image, member.name, 'media--portrait'), details)
 
     const back = el('div', 'flip-card__face flip-card__back')
     back.append(
@@ -32,7 +34,7 @@ export function setupCrew() {
       el('h3', 'flip-card__name', member.name),
       el('p', 'flip-card__role', member.role),
       el('p', 'flip-card__bio', member.bio),
-      el('span', 'flip-card__hint', 'Click to flip back'),
+      el('span', 'flip-card__hint', 'Tap + to flip back'),
     )
 
     inner.append(front, back)
