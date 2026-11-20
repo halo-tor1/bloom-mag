@@ -116,8 +116,6 @@ p {
 .entrance__logo {
   display: block;
   height: 72px;
-  filter: brightness(0) invert(1);
-  mix-blend-mode: normal;
 }
 
 .entrance__title {
@@ -174,7 +172,6 @@ p {
 
 .brand__logo {
   height: 40px;
-  filter: brightness(0) invert(1);
 }
 
 .brand__name {

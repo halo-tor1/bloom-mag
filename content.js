@@ -217,6 +217,16 @@ export const galleryEvents = [
     ],
   },
   {
+    id: 'international-day-of-the-girl-child',
+    title: 'International Day of the Girl Child',
+    photos: [
+      'images/international day of the girl child/Copy_of_1791533399169.jpg',
+      'images/international day of the girl child/Copy_of_1791533399260.jpg',
+      'images/international day of the girl child/Copy_of_1791533399069.jpg',
+      'images/international day of the girl child/Copy_of_1791533399004.jpg',
+    ],
+  },
+  {
     id: 'career-day',
     title: 'Career Day',
     photos: [
